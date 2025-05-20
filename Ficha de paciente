@@ -1,0 +1,40 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia nome
+		inteiro idade
+		cadeia sexo
+		cadeia cpf
+		cadeia endereco
+		cadeia telefone
+		cadeia sanguineo
+
+		escreva("Digite o seu nome: ")
+		leia(nome)
+		escreva("Digite a sua idade: ")
+		leia(idade)
+		escreva("Digite seu sexo: ")
+		leia(sexo)
+		escreva("Digite seu cpf: ")
+		leia(cpf)
+		escreva("Digite seu endereco:")
+		leia(endereco)
+		escreva("Digite seu telefone: ")
+		leia(telefone)
+		escreva("Digite seu sanguineo: ")
+		leia(sanguineo)
+
+		escreva("*******Confira suas informações*******\n")
+		escreva("\nSeu nome é: " ,nome)
+		escreva("\nSua idade é: " ,idade)
+		escreva("\nSeu sexo é: " ,sexo)
+		escreva("\nSeu cpf é: " ,cpf)
+		escreva("\nSeu endereco é: " ,endereco)
+		escreva("\nSeu telefone é: " ,telefone)
+		escreva("\nSeu sanguineo é: " ,sanguineo)
+
+		
+	}
+}
