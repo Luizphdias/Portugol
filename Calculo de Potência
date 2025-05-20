@@ -1,0 +1,20 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real base, expoente, i, resultado
+
+		escreva("Digite o valor da base: ")
+		leia(base)
+		escreva("Digite o valor do expoente: ")
+		leia(expoente)
+		
+          resultado= 1
+		para (i= 1; i <= expoente; i++)
+		{
+			resultado = resultado * base 
+		}
+		escreva("\nResultado: " , base, " ^ ", expoente, " = ", resultado, "\n")
+	}
+}
