@@ -1,0 +1,112 @@
+programa
+{
+    cadeia nomes[10]
+    inteiro prioridades[10]
+    inteiro inicia = 0
+    inteiro fim = -1
+    inteiro tam = 9
+
+    funcao inicio()
+    {
+        adicionarChamados()
+        mostrarFila()
+        mostrarPrioridadeAlta()
+        inicioFila()
+
+        inteiro opcao = 1
+
+        enquanto (opcao == 1 e inicia <= fim) {
+            escreva("\nDeseja remover o próximo chamado da fila? (1 para sim / 0 para não): ")
+            leia(opcao)
+
+            se (opcao == 1) {
+                desenfileirar()
+                mostrarFila()
+                mostrarPrioridadeAlta()
+                inicioFila()
+            }
+        }
+
+        escreva("\nPrograma finalizado.\n")
+    }
+
+    funcao enfileirar(cadeia nome, inteiro prioridade)
+    {
+        se (fim == tam) {
+            escreva("Erro: Fila cheia\n")
+        }
+        senao {
+            fim = fim + 1
+            nomes[fim] = nome
+            prioridades[fim] = prioridade
+            escreva("Chamado enfileirado: ", nome, " (Prioridade ", prioridade, ")\n")
+        }
+    }
+
+    funcao desenfileirar()
+    {
+        se (inicia > fim) {
+            escreva("Erro: Fila vazia\n")
+        }
+        senao {
+            escreva("Chamado removido: ", nomes[inicia], " (Prioridade ", prioridades[inicia], ")\n")
+            inicia = inicia + 1
+        }
+    }
+
+    funcao mostrarFila()
+    {
+        escreva("\nChamados na fila:\n")
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            para (inteiro i = inicia; i <= fim; i = i + 1) {
+                escreva("-> ", nomes[i], " (Prioridade ", prioridades[i], ")\n")
+            }
+        }
+    }
+
+    funcao mostrarPrioridadeAlta()
+    {
+        inteiro contador = 0
+        para (inteiro i = inicia; i <= fim; i = i + 1) {
+            se (prioridades[i] >= 4) {
+                contador = contador + 1
+            }
+        }
+        escreva("Chamados com prioridade alta (4 ou 5): ", contador, "\n")
+    }
+
+    funcao inicioFila()
+    {
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            escreva("Próximo chamado: ", nomes[inicia], " (Prioridade ", prioridades[inicia], ")\n")
+        }
+    }
+
+    funcao adicionarChamados()
+    {
+        inteiro quantidade, prioridade
+        cadeia nome
+        escreva("Quantos chamados deseja adicionar à fila? ")
+        leia(quantidade)
+
+        para (inteiro i = 1; i <= quantidade; i = i + 1) {
+            escreva("Digite o nome do ", i, "º solicitante: ")
+            leia(nome)
+            escreva("Digite a prioridade do chamado (1 a 5): ")
+            leia(prioridade)
+
+            enquanto (prioridade < 1 ou prioridade > 5) {
+                escreva("Prioridade inválida. Digite um valor entre 1 e 5: ")
+                leia(prioridade)
+            }
+
+            enfileirar(nome, prioridade)
+        }
+    }
+}
