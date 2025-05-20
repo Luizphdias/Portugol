@@ -1,0 +1,51 @@
+programa
+{
+	real n1, n2, result
+	caracter variavel
+	funcao inicio()
+	{
+
+	     escreva("Digite o valor de n1: ")
+	     leia(n1)
+	     escreva("Digite o valor de n2: ")
+	     leia(n2)
+		escreva(" Digite o sinal da operação: ")
+		leia(variavel)
+		escolha (variavel){
+			
+	    caso '+':
+	        result = n1+n2
+	        escreva("O resultado é: " ,result)
+
+	        pare
+	        
+	    caso '-':
+	        result = n1-n2
+	        escreva("O resultado é: " ,result)
+
+	        pare
+	        
+	    caso '*':
+	        result = n1*n2
+	        escreva("O resultado é: " ,result)
+
+	        pare
+	        
+	    caso '/':
+	        result = n1/n2
+	        escreva("O resultado é: " ,result)
+
+	        pare
+	        
+	    caso contrario:
+	        escreva("Operação inválida")
+	        pare
+		}
+	    
+	     
+		 
+
+	
+	    
+	}
+}
