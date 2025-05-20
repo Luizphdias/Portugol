@@ -1,0 +1,22 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real horas, vph, result, x
+
+		escreva("Quantidade de horas trabalhadas: ")
+		leia(horas)
+		escreva("Digite o valor das horas trabalhadas: ")
+		leia(vph)
+
+		x= horas - 40
+		se( horas <= 40)
+		result= horas * vph
+		senao 
+		result = 40 * vph + (x * (vph * 1.5) )
+
+		escreva("O resultado é: " , result)	
+		
+	}
+}
