@@ -1,0 +1,86 @@
+programa
+{
+    inteiro fila[20]
+    inteiro inicia = 0
+    inteiro fim = -1
+    inteiro tam = 19
+
+    funcao inicio()
+    {
+        adicionarNumeros()
+        mostrarFila()
+        inicioFila()
+
+        escreva("\nDeseja remover o primeiro elemento da fila? (1 para sim / 0 para não): ")
+        inteiro opcao
+        leia(opcao)
+
+        se (opcao == 1) {
+            desenfileirar()
+            mostrarFila()
+            inicioFila()
+        }
+
+        escreva("\nPrograma finalizado.\n")
+    }
+
+    funcao enfileirar(inteiro valor)
+    {
+        se (fim == tam) {
+            escreva("Erro: Fila cheia\n")
+        }
+        senao {
+            fim = fim + 1
+            fila[fim] = valor
+            escreva("Enfileirado: ", valor, "\n")
+        }
+    }
+
+    funcao desenfileirar()
+    {
+        se (inicia > fim) {
+            escreva("Erro: Fila vazia\n")
+        }
+        senao {
+            escreva("Desenfileirado: ", fila[inicia], "\n")
+            inicia = inicia + 1
+        }
+    }
+
+    funcao mostrarFila()
+    {
+        escreva("\nConteúdo da fila:\n")
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            para (inteiro i = inicia; i <= fim; i = i + 1) {
+                escreva(fila[i], " ")
+            }
+            escreva("\n")
+        }
+    }
+
+    funcao inicioFila()
+    {
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            escreva("Início da fila: ", fila[inicia], "\n")
+        }
+    }
+
+    funcao adicionarNumeros()
+    {
+        inteiro quantidade, valor
+        escreva("Quantos números deseja adicionar à fila? ")
+        leia(quantidade)
+
+        para (inteiro i = 1; i <= quantidade; i = i + 1) {
+            escreva("Digite o ", i, "º número: ")
+            leia(valor)
+            enfileirar(valor)
+        }
+    }
+}
