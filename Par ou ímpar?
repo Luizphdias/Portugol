@@ -1,0 +1,33 @@
+programa
+{
+	inteiro numero, resto
+	cadeia padrao
+	
+	funcao inicio()
+	{
+		
+    escreva("Digite um número inteiro: ")
+    leia(numero)
+
+    resto = numero % 2
+
+    escolha (resto){
+        caso 0:
+            escreva("O número ", numero, " é PAR.")
+            pare
+    
+        
+    
+        caso 1:
+            escreva("O número ", numero, " é ÍMPAR.")
+            pare
+   
+    
+        caso contrario:
+            escreva("Valor inválido.")
+            pare
+
+    }
+ 
+	}
+}
