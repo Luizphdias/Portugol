@@ -1,0 +1,93 @@
+programa
+{
+    cadeia nomes[10]
+    inteiro senhas[10]
+    inteiro inicia = 0
+    inteiro fim = -1
+    inteiro tam = 9
+    inteiro proximaSenha = 100
+
+    funcao inicio()
+    {
+        adicionarClientes()
+        mostrarFila()
+        inicioFila()
+
+        inteiro opcao = 1
+
+        enquanto (opcao == 1 e inicia <= fim) {
+            escreva("\nDeseja chamar o próximo cliente? (1 para sim / 0 para não): ")
+            leia(opcao)
+
+            se (opcao == 1) {
+                desenfileirar()
+                mostrarFila()
+                inicioFila()
+            }
+        }
+
+        escreva("\nAtendimentos finalizados.\n")
+    }
+
+    funcao enfileirar(cadeia nome)
+    {
+        se (fim == tam) {
+            escreva("Erro: Fila cheia\n")
+        }
+        senao {
+            fim = fim + 1
+            nomes[fim] = nome
+            senhas[fim] = proximaSenha
+            escreva("Cliente adicionado: ", nome, " (Senha ", proximaSenha, ")\n")
+            proximaSenha = proximaSenha + 1
+        }
+    }
+
+    funcao desenfileirar()
+    {
+        se (inicia > fim) {
+            escreva("Erro: Fila vazia\n")
+        }
+        senao {
+            escreva("Cliente chamado: ", nomes[inicia], " (Senha ", senhas[inicia], ")\n")
+            inicia = inicia + 1
+        }
+    }
+
+    funcao mostrarFila()
+    {
+        escreva("\nClientes na fila:\n")
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            para (inteiro i = inicia; i <= fim; i = i + 1) {
+                escreva("-> ", nomes[i], " (Senha ", senhas[i], ")\n")
+            }
+        }
+    }
+
+    funcao inicioFila()
+    {
+        se (inicia > fim) {
+            escreva("Fila vazia\n")
+        }
+        senao {
+            escreva("Próximo a ser atendido: ", nomes[inicia], " (Senha ", senhas[inicia], ")\n")
+        }
+    }
+
+    funcao adicionarClientes()
+    {
+        inteiro quantidade
+        cadeia nome
+        escreva("Quantos clientes deseja adicionar à fila? ")
+        leia(quantidade)
+
+        para (inteiro i = 1; i <= quantidade; i = i + 1) {
+            escreva("Digite o nome do ", i, "º cliente: ")
+            leia(nome)
+            enfileirar(nome)
+        }
+    }
+}
